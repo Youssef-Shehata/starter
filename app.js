@@ -1,12 +1,18 @@
 const express =  require("express")
 
 const app = express();
+const port = 3000
+const tasks = require('./routes/tasks')
 
+//middleware
 
+app.use(express.json())
 
-app.get('/' , (req,res,next)=>{
+app.use('/api/v1/tasks', tasks)
+
+app.use('/' , (req,res,next)=>{ 
 res.send("TASK MANAGER")
 })
-const port = 3000
+
 
 app.listen(port,console.log("hello"))
