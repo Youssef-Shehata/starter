@@ -1,4 +1,10 @@
+require('./utils/connect')
+require('dotenv').config()
 const express =  require("express")
+const connectDB = require('./utils/connect')
+
+
+
 
 const app = express();
 const port = 3000
@@ -15,4 +21,41 @@ res.send("TASK MANAGER")
 })
 
 
-app.listen(port,console.log("hello"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const start = async() =>{
+ try {
+    await connectDB(process.env.MONGO_URI)
+    app.listen(port,console.log("server listening on port 3000"))
+
+
+ } catch (error) {
+    console.log(error)
+ }
+}
+
+start()
