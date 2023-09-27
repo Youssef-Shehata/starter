@@ -10,8 +10,7 @@ const mongoose = require('mongoose')
             useUnifiedTopology: true,
 
         })
-        .then ( console.log("connection established"))
-        .catch((err)=> console.log(err))
+  
   }
 
 module.exports = connectDB
